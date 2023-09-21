@@ -31,19 +31,22 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 
-(ENTRY_STATE, QUESTION_STATE,) = range(2)
+(
+    ENTRY_STATE,
+    QUESTION_STATE,
+) = range(2)
 
 
 def _generate_copilot(prompt: str):
     """Gets answer from copilot"""
-    
+
     copilot = Copilot()
     c = copilot.get_answer(prompt)
 
     return c
 
 
-#Starting the bot
+# Starting the bot
 async def start(update: Update, context: ContextTypes):
     """Start the conversation and ask user for an option."""
 
@@ -92,7 +95,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 #     return QUESTION_STATE
 
 
-#Handling the answer
+# Handling the answer
 async def pre_query_answer_handler(update: Update, context: ContextTypes):
     """Display the answer to the user."""
 
@@ -104,25 +107,29 @@ async def pre_query_answer_handler(update: Update, context: ContextTypes):
     question = update.message.text
 
     answer = _generate_copilot(question)
-    context.user_data['answer'] = answer
+    context.user_data["answer"] = answer
 
     await update.message.reply_text(
-        answer, 
+        answer,
         # reply_markup=reply_markup,
     )
 
     return QUESTION_STATE
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     load_dotenv()
 
-    application = (Application.builder().token(os.getenv("BOT_TOKEN"))
-                    .read_timeout(100).get_updates_read_timeout(100).build()
+    application = (
+        Application.builder()
+        .token(os.getenv("BOT_TOKEN"))
+        .read_timeout(100)
+        .get_updates_read_timeout(100)
+        .build()
     )
 
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('start', start)],
+        entry_points=[CommandHandler("start", start)],
         states={
             ENTRY_STATE: [
                 # MessageHandler(filters.Regex('^Back$'), start),
@@ -130,13 +137,13 @@ if __name__ == '__main__':
                 #                 pre_query_handler),
             ],
             QUESTION_STATE: [
-                CommandHandler('cancel', cancel),
+                CommandHandler("cancel", cancel),
                 MessageHandler(filters.TEXT, pre_query_answer_handler),
             ],
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler("cancel", cancel)],
     )
-    
+
     application.add_handler(conv_handler)
     print("Bot is running ...")
     application.run_polling()
