@@ -3,6 +3,7 @@ import os
 import json
 import requests
 import time
+import openai
 
 from copilot import Copilot
 from dotenv import load_dotenv
@@ -50,27 +51,33 @@ def _generate_copilot(prompt: str):
 async def start(update: Update, context: ContextTypes):
     """Start the conversation and ask user for an option."""
 
-    # button = [[KeyboardButton(text="Question-Answering")]]
-    # reply_markup = ReplyKeyboardMarkup(
-    #     button, resize_keyboard=True
-    # )
-
-    # await update.message.reply_text(
-    #     "Choose an option: 👇🏻",
-    #     reply_markup=reply_markup,
-    # )
-
     await update.message.reply_text(
-        "Welcome to the club, body!!!",
+        f"Hello, {update.message.from_user.first_name}! Ask me any question",
     )
 
     return QUESTION_STATE
 
 
-async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def help(update: Update, context: ContextTypes) -> None:
+    """Shows the help menu."""
+
+    help_text = (
+        "/start - start bot\n"
+        +"/help - show all available commands\n"
+        +"/cancel - stop conversations with bot in a group chat\n"
+    )
+
+    await update.message.reply_text(help_text, disable_web_page_preview=True)
+
+    return QUESTION_STATE
+
+
+async def cancel(update: Update, context: ContextTypes) -> int:
     """Cancels and ends the conversation."""
+    
     user = update.message.from_user
     logger.info("User %s canceled the conversation.", user.first_name)
+    
     await update.message.reply_text(
         "Bye! I hope we can talk again some day.", reply_markup=ReplyKeyboardRemove()
     )
@@ -78,31 +85,9 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
-# #Handling the question
-# async def pre_query_handler(update: Update, context: ContextTypes):
-#     """Ask the user for a query."""
-
-#     button = [[KeyboardButton(text="Back")]]
-#     reply_markup = ReplyKeyboardMarkup(
-#         button, resize_keyboard=True
-#     )
-
-#     await update.message.reply_text(
-#         "Enter your text: 👇🏻",
-#         reply_markup=reply_markup,
-#     )
-
-#     return QUESTION_STATE
-
-
 # Handling the answer
 async def pre_query_answer_handler(update: Update, context: ContextTypes):
     """Display the answer to the user."""
-
-    # button = [[KeyboardButton(text="Back")]]
-    # reply_markup = ReplyKeyboardMarkup(
-    #     button, resize_keyboard=True
-    # )
 
     question = update.message.text
 
@@ -137,6 +122,7 @@ if __name__ == "__main__":
                 #                 pre_query_handler),
             ],
             QUESTION_STATE: [
+                CommandHandler("help", help),
                 CommandHandler("cancel", cancel),
                 MessageHandler(filters.TEXT, pre_query_answer_handler),
             ],
