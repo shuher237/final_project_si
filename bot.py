@@ -63,8 +63,8 @@ async def help(update: Update, context: ContextTypes) -> None:
 
     help_text = (
         "/start - start bot\n"
-        +"/help - show all available commands\n"
-        +"/cancel - stop conversations with bot in a group chat\n"
+        + "/help - show all available commands\n"
+        + "/cancel - stop conversations with bot in a group chat\n"
     )
 
     await update.message.reply_text(help_text, disable_web_page_preview=True)
@@ -74,10 +74,10 @@ async def help(update: Update, context: ContextTypes) -> None:
 
 async def cancel(update: Update, context: ContextTypes) -> int:
     """Cancels and ends the conversation."""
-    
+
     user = update.message.from_user
     logger.info("User %s canceled the conversation.", user.first_name)
-    
+
     await update.message.reply_text(
         "Bye! I hope we can talk again some day.", reply_markup=ReplyKeyboardRemove()
     )
