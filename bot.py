@@ -79,7 +79,7 @@ async def cancel(update: Update, context: ContextTypes) -> int:
     logger.info("User %s canceled the conversation.", user.first_name)
 
     await update.message.reply_text(
-        "Bye! I hope we can talk again some day.", reply_markup=ReplyKeyboardRemove()
+        "Oh, I'm sorry! Bye! I hope we can talk again some day.", reply_markup=ReplyKeyboardRemove()
     )
 
     return ConversationHandler.END
@@ -96,7 +96,6 @@ async def pre_query_answer_handler(update: Update, context: ContextTypes):
 
     await update.message.reply_text(
         answer,
-        # reply_markup=reply_markup,
     )
 
     return QUESTION_STATE
@@ -116,11 +115,6 @@ if __name__ == "__main__":
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
         states={
-            ENTRY_STATE: [
-                # MessageHandler(filters.Regex('^Back$'), start),
-                # MessageHandler(filters.Regex('^Question-Answering$'),
-                #                 pre_query_handler),
-            ],
             QUESTION_STATE: [
                 CommandHandler("help", help),
                 CommandHandler("cancel", cancel),
