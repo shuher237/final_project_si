@@ -33,9 +33,8 @@ logger = logging.getLogger(__name__)
 
 
 (
-    ENTRY_STATE,
     QUESTION_STATE,
-) = range(2)
+) = range(1)
 
 
 def _generate_copilot(prompt: str):
@@ -64,7 +63,7 @@ async def help(update: Update, context: ContextTypes) -> None:
     help_text = (
         "/start - start bot\n"
         +"/help - show all available commands\n"
-        +"/cancel - stop conversations with bot in a group chat\n"
+        +"/cancel - stop conversations with bot\n"
     )
 
     await update.message.reply_text(help_text, disable_web_page_preview=True)
@@ -116,11 +115,6 @@ if __name__ == "__main__":
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
         states={
-            ENTRY_STATE: [
-                # MessageHandler(filters.Regex('^Back$'), start),
-                # MessageHandler(filters.Regex('^Question-Answering$'),
-                #                 pre_query_handler),
-            ],
             QUESTION_STATE: [
                 CommandHandler("help", help),
                 CommandHandler("cancel", cancel),
@@ -131,5 +125,4 @@ if __name__ == "__main__":
     )
 
     application.add_handler(conv_handler)
-    print("Bot is running ...")
     application.run_polling()
