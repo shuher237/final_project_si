@@ -8,7 +8,7 @@ from bot import start
 @pytest.mark.asyncio
 async def test_start():
     """Test case for /start command."""
-    
+
     # Создаем макеты объектов Update и Context
     update = AsyncMock()
     context = AsyncMock()

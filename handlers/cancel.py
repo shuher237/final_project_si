@@ -17,6 +17,7 @@ logging.basicConfig(
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
+
 async def cancel(update: Update, context: ContextTypes) -> int:
     """Cancels and ends the conversation."""
 
@@ -24,7 +25,8 @@ async def cancel(update: Update, context: ContextTypes) -> int:
     logger.info("User %s canceled the conversation.", user.first_name)
 
     await update.message.reply_text(
-        "Был рад пообщаться! Заходи и спрашивай ещё!.", reply_markup=ReplyKeyboardRemove()
+        "Был рад пообщаться! Заходи и спрашивай ещё!.",
+        reply_markup=ReplyKeyboardRemove(),
     )
 
     return ConversationHandler.END

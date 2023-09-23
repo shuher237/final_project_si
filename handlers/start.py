@@ -7,6 +7,7 @@ from telegram.ext import (
     ContextTypes,
 )
 
+
 async def start(update: Update, context: ContextTypes):
     """Start the conversation and ask user for an option."""
 
