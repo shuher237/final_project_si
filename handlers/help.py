@@ -6,6 +6,7 @@ from telegram.ext import (
     ContextTypes,
 )
 
+
 async def help(update: Update, context: ContextTypes):
     """Shows the help menu."""
 

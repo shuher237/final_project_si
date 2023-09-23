@@ -7,6 +7,7 @@ from telegram.ext import (
     ContextTypes,
 )
 
+
 def _generate_chatgpt(prompt: str):
     """Gets answer from ChatGPT"""
 
@@ -14,6 +15,7 @@ def _generate_chatgpt(prompt: str):
     c = chatgpt.get_answer(prompt)
 
     return c
+
 
 async def answer(update: Update, context: ContextTypes):
     """Display the answer to the user."""

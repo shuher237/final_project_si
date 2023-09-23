@@ -5,7 +5,7 @@ import json
 import requests
 import time
 import openai
-from handlers.answer_handler import answer 
+from handlers.answer_handler import answer
 from handlers.start import start
 from handlers.help import help
 from handlers.cancel import cancel
