@@ -20,8 +20,6 @@ from telegram.ext import (
     filters,
 )
 
-""" (QUESTION_STATE) = range(1) """
-
 if __name__ == "__main__":
     load_dotenv()
 

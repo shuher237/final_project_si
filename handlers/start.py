@@ -7,11 +7,6 @@ from telegram.ext import (
     ContextTypes,
 )
 
-""" (
-    QUESTION_STATE,
-) = range(1)
- """
-
 async def start(update: Update, context: ContextTypes):
     """Start the conversation and ask user for an option."""
 

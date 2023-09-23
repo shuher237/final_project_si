@@ -1,5 +1,4 @@
 from states import QUESTION_STATE
-from dotenv import load_dotenv
 from telegram import (
     Update,
 )
@@ -7,13 +6,7 @@ from telegram.ext import (
     ContextTypes,
 )
 
-""" (
-    QUESTION_STATE,
-) = range(1)
- """
-
-
-async def help(update: Update, context: ContextTypes) -> None:
+async def help(update: Update, context: ContextTypes):
     """Shows the help menu."""
 
     help_text = (

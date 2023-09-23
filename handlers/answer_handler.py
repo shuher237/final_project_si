@@ -1,17 +1,11 @@
 from states import QUESTION_STATE
 from api import ChatGPT
-from dotenv import load_dotenv
 from telegram import (
     Update,
 )
 from telegram.ext import (
     ContextTypes,
 )
-
-
-""" (
-    QUESTION_STATE,
-) = range(1) """
 
 def _generate_chatgpt(prompt: str):
     """Gets answer from ChatGPT"""
