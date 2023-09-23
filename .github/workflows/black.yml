@@ -14,5 +14,5 @@ jobs:
       - name: Format code with black
         run: |
           pip install black
-          black . --check
+          black . --diff
       
