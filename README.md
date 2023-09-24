@@ -1,5 +1,8 @@
 # Software engineering project
 
+[![Build Status](https://github.com/shuher237/final_project_si/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/shuher237/final_project_si/actions/workflows/python-app.yml)
+[![Build Status](https://github.com/shuher237/final_project_si/actions/workflows/black.yml/badge.svg?branch=main)](https://github.com/shuher237/final_project_si/actions/workflows/black.yml)
+
 Students: Aflatunov Emil, Shukhardin Alexandr
 
 
