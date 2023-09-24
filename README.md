@@ -8,50 +8,58 @@ Students: Aflatunov Emil, Shukhardin Alexandr
 
 ## **Table of contents**
 [1. Project description](#project-description)  
-[2. Which case is being solved](#which-case-is-being-solved)  
-[3. Data information](#data-information)  
-[4. Project stages](#project-stages)  
-[5. Results](#results)  
-[6. Conclusions](#conclusions)  
+[2. Which case is being solved](#which-case-is-being-solved)
+[3. Task conditions]
+[4. Quality metrics]
+[5. What is being practiced]
+[6. Project stages](#project-stages)  
+[7. Results](#results)  
 
 ### **Project description**
-   Translation of text. Supports two options: translation from Russian to English and from English to Russian
+   Implementation of a chatbot assistant based on AI-powered language model ChatGPT in the Telegram messenger.
 
 [**⬆**](#table-of-contents) *to the contents*
 
 ### **Which case is being solved**
-   
+   Developed machine learning application using OpenAI and Telegram API and deployed on Streamlit Cloud.
 
 **Task conditions**
-   
+   1. The project source codes must be in the GitHub repository.
+   2. The GitHub repository has CI processes configured.
+   3. CI processes must include:
+   4. Executing unit tests.
+   5. Checking code style for PEP8 compliance.
+   6. Development of application features should be carried out in separate branches.
+   7. When merging a branch into the main repository, a Code Review must be performed.
+   8. Application code must follow PEP8 style and clean code rules.
+   9. The project can use a pre-trained model. There is no need to train your own model.
+   10. You need to configure application deployment to the cloud platform. Recommended cloud platforms:
+         **Streamlit Cloud (for applications on Streamlit)**
+         Yandex.Cloud
+         Hugging Face Spaces
+   11. You need to submit documentation for the developed application in the GitHub repository
 
 **Quality metrics**  
-   
+   To check the operation of the chatbot, testing was used using the pytest library, the flake8 linter was also configured and automatic code formatting was applied using the black library.
 
 **What is being practiced**
-   
-
-[**⬆**](#table-of-contents) *to the contents*
-
-### **Data information**
-   
+   In this project, the skills of using Git and Github are practiced in a team development environment, deploying a project on a cloud platform, performing unit tests, as well as checking the quality and style of code.
 
 [**⬆**](#table-of-contents) *to the contents*
 
 ### **Project stages**
-   
+   1. Creating a project repository
+   2. Connecting GitHub Actions (fkae8, black and pytest)
+   3. Connecting OpenAI and Telegram API
+   4. Creating main scripts of bot and AI model
+   5. Adding a server via Streamlit Cloud
+   6. Adding tests using pytest
+   7. Code refactoring and code review
+   8. Preparation of documentation on project results
 
 [**⬆**](#table-of-contents) *to the contents*
 
 ### **Results:**
-   
-
-[**⬆**](#table-of-contents) *to the contents*
-
-### **Conclusions:**
-   
-
-[**⬆**](#table-of-contents) *to the contents*
-
+   Telegram chatbot using ChatGPT ➡️ CHATGPT_SA(https://t.me/CHATGPT_SA_2315_BOT)
 
 Please, rate this project with ⭐️-s if you consider its interesting or useful.
