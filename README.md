@@ -1,7 +1,6 @@
 # Software engineering project
 
 [![Build Status](https://github.com/shuher237/final_project_si/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/shuher237/final_project_si/actions/workflows/python-app.yml)
-[![Build Status](https://github.com/shuher237/final_project_si/actions/workflows/black.yml/badge.svg?branch=main)](https://github.com/shuher237/final_project_si/actions/workflows/black.yml)
 
 Students: Aflatunov Emil, Shukhardin Alexandr
 
@@ -10,13 +9,13 @@ Students: Aflatunov Emil, Shukhardin Alexandr
 *Python 3.10.6*
 
 ## **Table of contents**
-[1. Project description](#project-description)  
-[2. Which case is being solved](#which-case-is-being-solved)
-[3. Task conditions]
-[4. Quality metrics]
-[5. What is being practiced]
-[6. Project stages](#project-stages)  
-[7. Results](#results)  
+1. [Project description](#project-description)
+2. [Which case is being solved](#which-case-is-being-solved)
+3. [Task conditions](#task-conditions)
+4. [Quality metrics](#quality-metrics)
+5. [What is being practiced](#what-is-being-practiced)
+6. [Project stages](#project-stages)
+7. [Results](#results)  
 
 ### **Project description**
    Implementation of a chatbot assistant based on AI-powered language model ChatGPT in the Telegram messenger.
@@ -26,7 +25,7 @@ Students: Aflatunov Emil, Shukhardin Alexandr
 ### **Which case is being solved**
    Developed machine learning application using OpenAI and Telegram API and deployed on Streamlit Cloud.
 
-**Task conditions**
+### **Task conditions**
    1. The project source codes must be in the GitHub repository.
    2. The GitHub repository has CI processes configured.
    3. CI processes must include:
@@ -42,10 +41,10 @@ Students: Aflatunov Emil, Shukhardin Alexandr
          Hugging Face Spaces
    11. You need to submit documentation for the developed application in the GitHub repository
 
-**Quality metrics**  
+### **Quality metrics**  
    To check the operation of the chatbot, testing was used using the pytest library, the flake8 linter was also configured and automatic code formatting was applied using the black library.
 
-**What is being practiced**
+### **What is being practiced**
    In this project, the skills of using Git and Github are practiced in a team development environment, deploying a project on a cloud platform, performing unit tests, as well as checking the quality and style of code.
 
 [**⬆**](#table-of-contents) *to the contents*
