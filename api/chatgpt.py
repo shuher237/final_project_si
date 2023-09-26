@@ -1,9 +1,10 @@
 import os
-from dotenv import load_dotenv
 import openai
 
+from dotenv import load_dotenv
 
-class Copilot:
+
+class ChatGPT:
     def clear_text(self, text):
         a = text.replace("\n", " ")
         b = a.split()
@@ -12,7 +13,7 @@ class Copilot:
         return c
 
     def get_answer(self, question):
-        prompt = question
+        prompt = self.clear_text(question)
 
         load_dotenv()
 
