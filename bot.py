@@ -43,7 +43,6 @@ def main() -> None:
     )
 
     application.add_handler(conv_handler)
-    get_logger(__name__).info("Bot is running...")
     application.run_polling()
 
 

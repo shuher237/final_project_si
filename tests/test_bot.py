@@ -1,6 +1,6 @@
 import pytest
 
-from utils.texts import get_hello_text
+from utils.messages import get_hello_text
 
 from unittest.mock import AsyncMock
 

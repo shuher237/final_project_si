@@ -1,4 +1,5 @@
 from utils.logging import get_logger
+from utils.messages import goodbye_msg
 
 from telegram import (
     Update,
@@ -17,7 +18,7 @@ async def cancel(update: Update, context: ContextTypes) -> int:
     get_logger(__name__).info("User %s canceled the conversation.", user.first_name)
 
     await update.message.reply_text(
-        "Был рад пообщаться! Заходи и спрашивай ещё!.",
+        goodbye_msg,
         reply_markup=ReplyKeyboardRemove(),
     )
 
