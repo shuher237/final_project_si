@@ -1,14 +1,12 @@
-from states import QUESTION_STATE
-import logging
 import os
-import json
-import requests
-import time
-import openai
-from handlers.answer_handler import answer
+
+from handlers.answer import answer
 from handlers.start import start
 from handlers.help import help
 from handlers.cancel import cancel
+
+from utils.states import QUESTION_STATE
+from utils.logging import get_logger
 
 from dotenv import load_dotenv
 
@@ -20,7 +18,8 @@ from telegram.ext import (
     filters,
 )
 
-if __name__ == "__main__":
+
+def main() -> None:
     load_dotenv()
 
     application = (
@@ -44,5 +43,9 @@ if __name__ == "__main__":
     )
 
     application.add_handler(conv_handler)
-    print("Bot is running ...")
+    get_logger(__name__).info("Bot is running...")
     application.run_polling()
+
+
+if __name__ == "__main__":
+    main()
