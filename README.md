@@ -25,6 +25,8 @@ Students: Aflatunov Emil, Shukhardin Alexandr
 ### **Which case is being solved**
    Developed machine learning application using OpenAI and Telegram API and deployed on Streamlit Cloud.
 
+[**⬆**](#table-of-contents) *to the contents*
+
 ### **Task conditions**
    1. The project source codes must be in the GitHub repository.
    2. The GitHub repository has CI processes configured.
@@ -41,8 +43,12 @@ Students: Aflatunov Emil, Shukhardin Alexandr
          Hugging Face Spaces
    11. You need to submit documentation for the developed application in the GitHub repository
 
+[**⬆**](#table-of-contents) *to the contents*
+
 ### **Quality metrics**  
    To check the operation of the chatbot, testing was used using the pytest library, the flake8 linter was also configured and automatic code formatting was applied using the black library.
+
+[**⬆**](#table-of-contents) *to the contents*
 
 ### **What is being practiced**
    In this project, the skills of using Git and Github are practiced in a team development environment, deploying a project on a cloud platform, performing unit tests, as well as checking the quality and style of code.
@@ -62,6 +68,8 @@ Students: Aflatunov Emil, Shukhardin Alexandr
 [**⬆**](#table-of-contents) *to the contents*
 
 ### **Results:**
-   Telegram chatbot using ChatGPT ➡️ CHATGPT_SA(https://t.me/CHATGPT_SA_2315_BOT)
+   Telegram chatbot using ChatGPT ⏩ CHATGPT_SA(https://t.me/CHATGPT_SA_2315_BOT)
+
+[**⬆**](#table-of-contents) *to the contents*
 
 Please, rate this project with ⭐️-s if you consider its interesting or useful.

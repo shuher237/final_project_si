@@ -1,5 +1,7 @@
-from states import QUESTION_STATE
-from api import ChatGPT
+from utils.states import QUESTION_STATE
+
+from api.chatgpt import ChatGPT
+
 from telegram import (
     Update,
 )
@@ -8,7 +10,7 @@ from telegram.ext import (
 )
 
 
-def _generate_chatgpt(prompt: str):
+def _generate_chatgpt(prompt: str) -> str:
     """Gets answer from ChatGPT"""
 
     chatgpt = ChatGPT()
@@ -17,7 +19,7 @@ def _generate_chatgpt(prompt: str):
     return c
 
 
-async def answer(update: Update, context: ContextTypes):
+async def answer(update: Update, context: ContextTypes) -> int:
     """Display the answer to the user."""
 
     question = update.message.text
