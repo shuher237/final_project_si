@@ -68,7 +68,7 @@ Students: Aflatunov Emil, Shukhardin Alexandr
 [**⬆**](#table-of-contents) *to the contents*
 
 ### **Results:**
-   Telegram chatbot using ChatGPT ➡️ CHATGPT_SA(https://t.me/CHATGPT_SA_2315_BOT)
+   Telegram chatbot using ChatGPT ⏩ CHATGPT_SA(https://t.me/CHATGPT_SA_2315_BOT)
 
 [**⬆**](#table-of-contents) *to the contents*
 
