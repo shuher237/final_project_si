@@ -1,6 +1,6 @@
 import pytest
 
-from utils.messages import get_hello_text
+from utils.messages import get_hello_msg
 
 from unittest.mock import AsyncMock
 
@@ -19,5 +19,5 @@ async def test_start():
 
     # Check that the bot has sent the expected message
     update.message.reply_text.assert_called_with(
-        get_hello_text(update.message.from_user.first_name)
+        get_hello_msg(update.message.from_user.first_name)
     )
